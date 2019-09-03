@@ -12,4 +12,11 @@
 		<relativePath>../MyAtcrowdfunding-parent/pom.xml </relativePath>
 	</parent>
 
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.apache.solr/solr-solrj -->
+		<dependency>
+		    <groupId>org.apache.solr</groupId>
+		    <artifactId>solr-solrj</artifactId>
+		</dependency>
+	</dependencies>
 </project>

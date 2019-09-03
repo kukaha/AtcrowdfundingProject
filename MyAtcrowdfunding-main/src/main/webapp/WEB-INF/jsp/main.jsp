@@ -47,8 +47,9 @@
 				</button>
 			</li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
+          <form id="serarch" class="navbar-form navbar-right">
+            <input id="finputSearch" type="text" class="form-control" placeholder="Search...">
+            <button onclick="doSearch()" type="button" class="btn btn-default btn-success dropdown-toggle">搜索</button>
           </form>
         </div>
       </div>
@@ -92,6 +93,7 @@
     <script src="${APP_PATH}/jquery/jquery-2.1.1.min.js"></script>
     <script src="${APP_PATH}/bootstrap/js/bootstrap.min.js"></script>
 	<script src="${APP_PATH}/script/docs.min.js"></script>
+	<script type="text/javascript" src="${APP_PATH}/jquery/layer/layer.js"></script>
         <script type="text/javascript">
             $(function () {
 			    $(".list-group-item").click(function(){
@@ -119,6 +121,37 @@
             	alink.parent().parent().parent().removeClass("tree-closed")
             	alink.parent().parent().show()
             }
+            
+            function doSearch(){
+            	var finputSearch = $("#finputSearch");
+            	var searchIndex = -1;
+            	$.ajax({
+            		type : "GET",
+            		data : {
+            			"keyWord" : finputSearch.val()
+            		},
+            		url : "${APP_PATH}/doSearch.do",
+            		beforeSend : function(){
+            			searchIndex = layer.msg("正在搜索...",{icon:5});
+            			return true;
+            		},
+            		success : function(result){
+            			layer.close(searchIndex);
+            			if(result.success){
+            				layer.msg(result.data,{time:5000,icon:6,shift:6});
+            			}else{
+            				layer.msg(result.message,{time:1000,icon:5,shift:6});
+            			}
+            		},
+            		error : function(){
+            			layer.msg("搜索异常",{time:1000,icon:5,shift:6});
+            		}
+            	});
+            	
+            }
+            
+            
+            
         </script>
   </body>
 </html>

@@ -74,28 +74,29 @@
         
        
   		<!-- 指定数据库表 -->
-  		<table schema="" tableName="t_account_type_cert" domainObjectName="AccountTypeCert"/>
-  		<table schema="" tableName="t_advertisement" domainObjectName="Advertisement"/>
-        <table schema="" tableName="t_cert" domainObjectName="Cert"/>
-        <table schema="" tableName="t_dictionary" domainObjectName="Dictionary"/>
-        <table schema="" tableName="t_member" domainObjectName="Member"/>
-        <table schema="" tableName="t_member_address" domainObjectName="MemberAddress"/>
-        <table schema="" tableName="t_member_cert" domainObjectName="MemberCert"/>
-        <table schema="" tableName="t_member_project_follow" domainObjectName="MemberProjectFollow"/>
-        <table schema="" tableName="t_message" domainObjectName="Message"/>
-        <table schema="" tableName="t_order" domainObjectName="Order"/>
-        <table schema="" tableName="t_param" domainObjectName="Param"/>
-        <table schema="" tableName="t_permission" domainObjectName="Permission"/>
-        <table schema="" tableName="t_project" domainObjectName="Project"/>
-        <table schema="" tableName="t_project_tag" domainObjectName="ProjectTag"/>
-        <table schema="" tableName="t_project_type" domainObjectName="ProjectType"/>
-        <table schema="" tableName="t_return" domainObjectName="Return"/>
-        <table schema="" tableName="t_role" domainObjectName="Role"/>
-        <table schema="" tableName="t_role_permission" domainObjectName="RolePermission"/>
-        <table schema="" tableName="t_tag" domainObjectName="Tag"/>
-        <table schema="" tableName="t_type" domainObjectName="Type"/>
-        <table schema="" tableName="t_user" domainObjectName="User"/>
-        <table schema="" tableName="t_user_role" domainObjectName="UserRole"/>
+<!--   		<table schema="" tableName="t_account_type_cert" domainObjectName="AccountTypeCert"/> -->
+<!--   		<table schema="" tableName="t_advertisement" domainObjectName="Advertisement"/> -->
+<!--         <table schema="" tableName="t_cert" domainObjectName="Cert"/> -->
+<!--         <table schema="" tableName="t_dictionary" domainObjectName="Dictionary"/> -->
+<!--         <table schema="" tableName="t_member" domainObjectName="Member"/> -->
+<!--         <table schema="" tableName="t_member_address" domainObjectName="MemberAddress"/> -->
+<!--         <table schema="" tableName="t_member_cert" domainObjectName="MemberCert"/> -->
+<!--         <table schema="" tableName="t_member_project_follow" domainObjectName="MemberProjectFollow"/> -->
+<!--         <table schema="" tableName="t_message" domainObjectName="Message"/> -->
+<!--         <table schema="" tableName="t_order" domainObjectName="Order"/> -->
+<!--         <table schema="" tableName="t_param" domainObjectName="Param"/> -->
+<!--         <table schema="" tableName="t_permission" domainObjectName="Permission"/> -->
+<!--         <table schema="" tableName="t_project" domainObjectName="Project"/> -->
+<!--         <table schema="" tableName="t_project_tag" domainObjectName="ProjectTag"/> -->
+<!--         <table schema="" tableName="t_project_type" domainObjectName="ProjectType"/> -->
+<!--         <table schema="" tableName="t_return" domainObjectName="Return"/> -->
+<!--         <table schema="" tableName="t_role" domainObjectName="Role"/> -->
+<!--         <table schema="" tableName="t_role_permission" domainObjectName="RolePermission"/> -->
+<!--         <table schema="" tableName="t_tag" domainObjectName="Tag"/> -->
+<!--         <table schema="" tableName="t_type" domainObjectName="Type"/> -->
+<!--         <table schema="" tableName="t_user" domainObjectName="User"/> -->
+<!--         <table schema="" tableName="t_user_role" domainObjectName="UserRole"/> -->
+        <table schema="" tableName="t_student" domainObjectName="Student"/>
 
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">

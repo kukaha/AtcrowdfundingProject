@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-<!--     <context:component-scan base-package="cn.kukaha.atcrowdfunding.*" /> -->
+    <import resource="classpath:/spring/spring-solr.xml"></import>
     
 	<context:component-scan base-package="cn.kukaha.atcrowdfunding.*">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>

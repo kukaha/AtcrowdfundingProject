@@ -6,22 +6,49 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.kukaha.atcrowdfunding.bean.User;
+import cn.kukaha.atcrowdfunding.manager.service.StudentService;
 import cn.kukaha.atcrowdfunding.manager.service.UserService;
 import cn.kukaha.atcrowdfunding.util.AjaxResult;
 import cn.kukaha.atcrowdfunding.util.Constant;
 import cn.kukaha.atcrowdfunding.util.MD5Util;
+import cn.kukaha.atcrowdfunding.util.StringUtil;
 
 @Controller
 public class DispatcherController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+//	@Qualifier("studentService")
+	private StudentService studentService;
+	
+	@RequestMapping("doSearch")
+	@ResponseBody
+	public Object doSearch(String keyWord) throws Exception{
+		AjaxResult result = new AjaxResult();
+		
+		try {
+			if(StringUtil.isEmpty(keyWord)){
+				keyWord = "*:*";
+			}
+			String search = studentService.search(keyWord);
+			result.setData(search);
+			result.setSuccess(true);
+		} catch (Exception e) {
+			result.setSuccess(false);
+			e.printStackTrace();
+			result.setMessage("搜索失败");
+		}
+		return result;
+	}
 	
 	@RequestMapping("index")
 	public String index(){

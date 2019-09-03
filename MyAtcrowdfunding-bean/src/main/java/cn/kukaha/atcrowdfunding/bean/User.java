@@ -2,17 +2,26 @@ package cn.kukaha.atcrowdfunding.bean;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
-    private Integer id;
+import org.apache.solr.client.solrj.beans.Field;
 
+public class User implements Serializable {
+	@Field("id")
+    private Integer id;
+//    private String id;
+
+	@Field("user_loginacct")
     private String loginacct;
 
+	@Field("user_userpswd")
     private String userpswd;
 
+	@Field("user_username")
     private String username;
 
+	@Field("user_email")
     private String email;
 
+	@Field("user_createtime")
     private String createtime;
 
     private static final long serialVersionUID = 1L;
@@ -25,11 +34,20 @@ public class User implements Serializable {
         this.id = id;
     }
 
+    
+//    public String getId() {
+//		return id;
+//	}
+//
+//	public void setId(String id) {
+//		this.id = id;
+//	}
+	
     public String getLoginacct() {
         return loginacct;
     }
 
-    public void setLoginacct(String loginacct) {
+	public void setLoginacct(String loginacct) {
         this.loginacct = loginacct == null ? null : loginacct.trim();
     }
 
