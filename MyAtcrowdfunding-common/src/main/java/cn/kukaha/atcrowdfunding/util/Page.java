@@ -6,7 +6,7 @@ public class Page {
 
 	private Integer pageno;
 	private Integer pagesize;
-	private List datas;
+	private List<Object> datas;
 	private Integer totalsize;
 	private Integer totalno;
 	public Integer getPageno() {

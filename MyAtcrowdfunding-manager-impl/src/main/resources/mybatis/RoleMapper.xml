@@ -27,4 +27,29 @@
     select id, name
     from t_role
   </select>
+  
+  
+  <select id="queryList" parameterType="map" resultMap="BaseResultMap">
+    select id, name  
+    from t_role 
+    <where>
+   		<if test="queryText!=null">name like concat("%",#{queryText},"%")</if>
+    </where>
+     order by id desc
+     limit #{startIndex},#{pagesize}
+  </select>
+  
+  <select id="queryCount" parameterType="map" resultType="int">
+    select count(*) from t_role 
+    <where>
+   		<if test="queryText!=null">name like concat("%",#{queryText},"%")</if>
+    </where>
+  </select>
+  
+  <delete id="deleteBatchRoleByVO">
+      delete from t_role where id in 
+      <foreach collection="ids" open="(" close=")" separator="," item="role">
+          #{role}
+      </foreach>
+  </delete>
 </mapper>
